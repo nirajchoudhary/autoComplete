@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <script type="text/javascript" src="http://maps.google.com/maps/api/js"></script>
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+	
+	<script src="{% static 'js/distanceCalc.js' %}"></script>
+	<script type="text/javascript">	
+		$(document).ready(function(){
+			initialize();
+			//e.preventDefault();
+		var airportsList = (("{{airports}}").replace(/&(l|g|quo)t;/g, function(a,b){
+            return {
+                l   : '<',
+                g   : '>',
+                quo : '"'
+            }[b];
+        }));
+		airportsList = airportsList.replace(/u'/g, '\'');
+		airportsList = airportsList.replace(/'/g, '\"');
+		var airports = JSON.parse( airportsList );
+		var source = "813107 uprama";
+		//var end1 = document.getElementById("end");
+		//var distanceInput1 = document.getElementById("distance");
+		var min = 999999.0000;
+		var dist;
+		//$('input:text[name=dst]').val(10);
+		//dist = $('input:text[name=dst]').val();
+		//$("#check").val(dist);
+		//for(var airport in airports)
+		for(var i=21;i<=31;i++)
+		{
+				var x = airports[i].name + " " + airports[i].city;
+				$("#end").val(x);
+				calcRoute(x);
+
+				dist = $('input:text[name=dst]').val();
+				//$("#check").val("dist");
+				if(min > dist)
+					min = dist;
+		}
+		//dist = $("#distance").val();
+		$("#check").val(min);
+		
+	});
+	</script>
+</head>
+<body>
+<input type="text" id="start" name="st" value="813107 uprama" />
+<input type="text" id="end" name="en" />
+<input type="text" id="distance" name="dst" value="99"/>
+<input type="text" id="check" name="chk" />
+<div id="map_canvas"></div>
+</body>
+</html>

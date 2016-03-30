@@ -1,0 +1,123 @@
+
+.form_container{
+	background: #f8f8f8 url(../img/pattern.jpg) left top repeat;
+    border-radius: 8px;
+    box-shadow: 0 1px 5px 0 rgba(0,0,0,.3);
+	padding:20px;
+	margin: 2%;
+	margin-left: 35%;
+	margin-right: 35%;
+}
+
+
+.error{
+	color: #eb4141;
+	font-size: 12px;
+}
+
+.error_login{
+	margin-left: 11%;
+	color: #eb4141;
+}
+
+.logout{
+	display: inherit;
+    margin: 0;
+    padding: 1px 25px 0px;
+    text-align: right;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+    text-transform: uppercase;
+    font-size: 1.25em;
+    font-weight: 400;
+    letter-spacing: 3px;
+    color: #fff;
+}
+
+.form_container form input {
+    width: 55%;
+    height: 30px;
+	padding: 3px 7px 3px 7px;
+    background: #fcfcfc;
+    border: 1px solid #ddd;
+    border-radius: 2px;
+    box-shadow: 0 1px 3px 0 rgba(0,0,0,.1) inset;
+    font-family: 'PT Sans', Helvetica, Arial, sans-serif;
+    color: #888;
+    font-size: 16px;
+}
+
+
+.form_container form textarea {
+	width: 55%;
+    height: 50px;
+	padding: 3px 3px 3px 7px;
+    background: #fcfcfc;
+    border: 1px solid #ddd;
+    border-radius: 2px;
+    box-shadow: 0 1px 3px 0 rgba(0,0,0,.1) inset;
+    font-family: 'PT Sans', Helvetica, Arial, sans-serif;
+    color: #888;
+    font-size: 16px;
+}
+.form_container form input:focus {
+    border: 1px solid #ccc;
+	padding: 3px 7px 3px 7px;
+    box-shadow: none;
+}
+
+.form_container form label {
+	margin-top: 5px;
+    font-size: 14px;
+}
+
+
+.form_container form button {
+	cursor: pointer;
+	width: 30%;
+	height: 42px;
+	margin-top: 5px;
+	margin-left: 35%;
+	padding: 0;
+	background: #eb4141;
+	border-radius: 3px;
+	border: 0;
+	box-shadow: 0 15px 30px 0 rgba(255,255,255,.1) inset;
+	font-family: 'PT Sans', Helvetica, Arial, sans-serif;
+	font-size: 16px;
+	font-weight: 400;
+	color: #fff;
+	text-shadow: 0 1px 2px rgba(0,0,0,.1);
+
+}
+
+.form_container form button:hover {
+    box-shadow: 0 -15px 30px 0 rgba(255,255,255,.05) inset;
+}
+
+.form_container form button:active {
+    box-shadow:
+        0 -15px 30px 0 rgba(255,255,255,.05) inset,       
+        0 5px 8px 0 rgba(0,0,0,.1) inset;
+}
+
+.red { color: #eb4141; }
+a:hover { text-decoration: none; }
+
+/* ----- Media queries ----- */
+
+@media (max-width: 1200px) {
+    
+}
+
+@media (min-width: 768px) and (max-width: 979px) {
+    
+}
+
+@media (max-width: 767px) {
+    body { padding-left: 0; padding-right: 0; }
+    .links { padding-bottom: 5px; }
+}
+
+@media (max-width: 480px) {
+    .form_container form button { width: 97%; }
+}

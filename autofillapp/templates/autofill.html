@@ -1,0 +1,64 @@
+{% extends "parent.html" %}
+
+{% block title %} AutoFill Page {% endblock %}
+{% block content %}	
+	<div class="container-fluid container-main">
+	<div id="citySearch">
+		<div class="row">
+			<div class="col-sm-3"></div>
+			<div class="form_container col-sm-6">
+				<form id="myForm" method="POST"> {% csrf_token %}
+					<div class="inner-addon right-addon ui-widget">
+    					<i class="glyphicon glyphicon-search red"></i>
+    					<input type="text" name="autofill" id="autofill" data-toggle="tooltip" 					data-placement= "auto" title="Search City-Name / pincode / Railway-Station-Code / Airport-Code" placeholder="Enter Text/Digit..." />
+					</div>
+				</form>
+			</div>
+			<div class="col-sm-3"></div>
+		</div>
+	</div>
+	<div id="placesSearch"> 
+    	<div class="row">
+      		<div class="col-sm-3"></div>
+      		<div class="form_container col-sm-6">
+      			<form id="myForm1" method="POST"> {% csrf_token %}
+        			<div class="inner-addon right-addon ui-widget">
+            			<i class="glyphicon glyphicon-search red"></i>
+            			<input type="text" id="pac-input" data-toggle="tooltip" data-placement= "auto" title="	Search Places/Address" placeholder="Enter Places..."/>
+        			</div>
+      			</form>
+      		</div>
+      		<div class="col-sm-3"></div>
+    	</div>
+ 	</div>
+ 	<div id="nearestSearch"> 
+    	<div class="row">
+      		<div class="col-sm-3"></div>
+      		<div class="form_container col-sm-6">
+				  <form id="myForm2" method="POST"> {% csrf_token %}
+      				<div id="searchOption" style="text-align:center;">  <!--checked="checked" -->
+    					<input type="radio" id="byWindows" name="searchOption" /><label for="byWindows">Location Through WebBrowser</label>
+    					<input type="radio" id="byCustom" name="searchOption"/><label for="byCustom">Location through Custom Input</label>
+					    </div>
+					    <p id="error"></p>
+        			<div id="toggleDiv" class="inner-addon right-addon ui-widget">
+            			<i class="glyphicon glyphicon-search red"></i>
+            			<input type="text" id="input1" name="source" data-toggle="tooltip" data-placement= "auto" title="	Search Nearest Airport and Railway Station" placeholder="Enter Your Location..."/>
+            			<p></p>
+            			<button type="button" class="btn btn-info" id="submitLocation" >Submit</button>
+        			</div>
+        			<hr>
+        			<label class="sr-only" for="closestAirport">Nearest Airport</label>
+        			<input class="well" type="text" id="closestAirport" readonly placeholder="Nearest Airport" />   
+        			<label class="sr-only" for="closestStation">Nearest Railway Station</label>
+        			<input class="well" type="text" id="closestStation" readonly placeholder="Nearest Railway Station" />
+              <label class="sr-only" for="closestCity">Nearest Railway Station</label>
+              <input class="well" type="text" id="closestCity" readonly placeholder="Nearest City" />
+      			</form>
+      		</div>
+      		<div class="col-sm-3"></div>
+    	</div>
+ 	</div>
+	</div>
+	
+{% endblock %}
